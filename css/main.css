@@ -5,7 +5,6 @@
   margin: 0;
   box-sizing: border-box;
 }
-
 :root {
   --dark-color: #000;
 }
@@ -1728,8 +1727,11 @@ h1 {
 
 /* Media Queries para tamaños de pantalla diferentes */
 @media screen and (min-width: 320px) {
-
+  
   body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
     perspective: none; /* Para evitar distorsión en pantallas pequeñas */
   }
   
