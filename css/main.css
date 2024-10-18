@@ -10,30 +10,9 @@
   --dark-color: #000;
 }
 
-/* body {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  min-height: 100vh;
-  background-color: var(--dark-color);
-   overflow: hidden; 
-  perspective: 1000px;
-} */
-/* #lyrics {
-  font-size: 28px;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  color: white;
-  display: flex;
-  justify-content: start;
-  z-index: 1;
-  font-weight: bold;
-  letter-spacing: 4px;
-} */
- /* Centralización general */
-/* Centralización general */
-/* Centralización general */
-/* Centralización general */
 body {
+  font-family: "Playwrite GB S", cursive;
+  font-optical-sizing: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -47,7 +26,7 @@ body {
 /* Animación de las flores */
 .flowers {
   position: absolute;
-  top: 100%; /* Ajustar según tu preferencia */
+  top: 100%;
   transform: scale(0.9);
   opacity: 0;
   animation: fadeInOut 10s ease-in-out forwards;
@@ -55,19 +34,22 @@ body {
 
 /* Animación del título */
 .titulo {
-  font-family: "Arial Narrow", Arial, sans-serif;
+  font-family: "Playwrite GB S", cursive;
+  font-optical-sizing: auto;
   color: yellow;
   font-weight: bold;
   letter-spacing: 10px;
   text-align: center;
   opacity: 0;
-  animation: fadeInOutTitle 15s ease-in-out forwards; /* Modificada a 20s */
+  animation: fadeInOutTitle 15s ease-in-out forwards;
   animation-delay: 11s; /* Aparece después de las flores */
   position: relative;
 }
 
 /* Animación para las letras (lyrics) */
 #lyrics {
+  font-family: "Playwrite GB S", cursive;
+  font-optical-sizing: auto;
   font-size: 28px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   color: white;
@@ -75,10 +57,10 @@ body {
   letter-spacing: 4px;
   opacity: 0;
   animation: fadeIn 10s ease-in-out forwards;
-  animation-delay: 21s; /* Aparece después del título */
+  animation-delay: 21s;
   text-align: center;
-  position: relative; /* Aseguramos que permanezca centrado */
-  margin-top: 40px; /* Ajusta el espacio con respecto al título */
+  position: relative;
+  margin-top: 40px;
 }
 
 /* Animación para las flores: fadeInOut */
@@ -136,6 +118,8 @@ body {
 @media only screen and (max-width: 600px) {
   /* Estilos específicos para dispositivos con un ancho máximo de 600px */
   #lyrics {
+      font-family: "Playwrite GB S", cursive;
+      font-optical-sizing: auto;
       font-size: 14px; /* Reduce el tamaño del texto para dispositivos más pequeños */
       margin-bottom: 530px;
       letter-spacing: 3px;
@@ -174,30 +158,6 @@ body {
 #startButton:active {
   background-color: #333;
 }
-
-
-
-/* Estilo para los controles */
-
-/* .titulo {
-  margin-bottom: 180px;
-  font-family: "Arial Narrow", Arial, sans-serif;
-  color: yellow;
-  font-weight: bold;
-  letter-spacing: 10px;
-  opacity: 0;
-  animation: fadeIn 40s ease-in-out forwards;
-  text-align: center;
-}
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-} */
-
 .night {
   z-index: -1;
   position: absolute;
@@ -240,13 +200,6 @@ body {
     ),
     linear-gradient(90deg, rgb(0, 255, 250), rgb(240, 240, 240));
 }
-
-/* .flowers {
-  position: relative;
-  transform: scale(0.9);
-  margin-bottom: 100px;
-
-} */
 
 @media only screen and (max-width: 600px) {
   /* Estilos específicos para dispositivos con un ancho máximo de 600px */
@@ -1774,12 +1727,36 @@ h1 {
 }
 
 /* Media Queries para tamaños de pantalla diferentes */
-@media screen and (max-width: 600px) {
-  /* Estilos para pantallas pequeñas */
-  h1 {
-      font-size: 1.5em;
+@media screen and (min-width: 350px) {
+
+  body {
+    perspective: none; /* Para evitar distorsión en pantallas pequeñas */
+  }
+  
+  .titulo {
+    font-family: "Playwrite GB S", cursive;
+    font-optical-sizing: auto;
+    position: absolute;
+    font-size: 18px; /* Reducimos el tamaño del título */
+    letter-spacing: 5px; /* Ajustamos el espacio entre letras */
+    animation-delay: 8s; /* Ajuste de tiempos */
+  }
+
+  #lyrics {
+    font-family: "Playwrite GB S", cursive;
+    font-optical-sizing: auto;
+    position: absolute;
+    font-size: 16px; /* Reducimos el tamaño de la letra para que se ajuste */
+    letter-spacing: 2px; /* Reducimos el espacio entre letras */
+    top: 300px; /* Ajustamos la distancia respecto al título */
+  }
+
+  .flowers {
+    transform: scale(0.7); /* Reducimos el tamaño de las flores */
+    animation: fadeInOut 8s ease-in-out forwards; /* Ajustamos duración */
   }
 }
+
 
 @media screen and (min-width: 601px) and (max-width: 1024px) {
   /* Estilos para pantallas medianas */
@@ -1794,5 +1771,6 @@ h1 {
       font-size: 2em;
   }
 }
-
+@media screen and (max-width: 320px) {
+}
 /* Agregar más estilos según sea necesario */
